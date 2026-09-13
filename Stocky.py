@@ -1,6 +1,10 @@
+#!/usr/bin/env python3
+
 import sqlite3
 import subprocess
 import os
+
+version = "1.6.8"
 
 conexion = sqlite3.connect("stock.db")
 cursor = conexion.cursor()
@@ -16,7 +20,23 @@ cursor.execute(
 """
 )
 
-version = 1.2
+def calculadora_ingreso_NETO_mensual():
+    ingreso_neto_mensual = pedir_numero("¿Cual es el ingreso NETO mensual?: ")
+    egreso_mensual = pedir_numero("¿Cual es el egreso mensual?: ")
+    meses = int(pedir_numero("¿Cuantos meses desea calcular?: "))
+    for i in range(meses):
+        ingreso_neto_mensual_float = ingreso_neto_mensual - egreso_mensual
+        print(f"Mes {i + 1} se gano ${ingreso_neto_mensual_float / meses:.2f}")
+    print(f"La suma total de ingresos es de ${ingreso_neto_mensual_float:.2f}") 
+        
+        
+def calculadora_ingreso_NETO():
+    ingreso_BRUTO = pedir_numero("¿Cuanto es el ingreso BRUTO?: ")
+    egreso = pedir_numero("¿Cuanto es el egreso?: ")
+    ingreso_NETO = ingreso_BRUTO - egreso
+    print(f"\n💵 El ingreso NETO es de ${ingreso_NETO:.2f}\n")
+    
+
 
 def mostrar_estadisticas():
     cursor.execute("SELECT SUM(cantidad * precio_USD), SUM(cantidad), AVG(precio_USD) FROM stock")
@@ -98,19 +118,17 @@ def bucle_principal():
         print("4. Limpiar la pantalla.")
         print("5. Eliminar un producto.")
         print("6. Mostrar Valor total del inventario.")
-        print("7. Salir.")
+        print("7. Calculadora de 1 ingreso NETO")
+        print("8. Calculadora de ingreso Mensual")
+        print("9. Salir.")
         opcion = input("¿Qué opción desea realizar?: ")
 
         if opcion == "1":
-            nombre_producto = input(
-                "¿Qué nombre desea ponerle a su producto?: "
-            )
-            cantidad = int(
-                pedir_numero(f"¿Cuántas unidades tiene de {nombre_producto}?: ")
-            )
-            precio = pedir_numero(
-                f"¿Cuál es el precio en USD de {nombre_producto}?: "
-            )
+            nombre_producto = input("¿Qué nombre desea ponerle a su producto?: ")
+
+            cantidad = int(pedir_numero(f"¿Cuántas unidades tiene de {nombre_producto}?: "))
+
+            precio = pedir_numero(f"¿Cuál es el precio en USD de {nombre_producto}?: ")
 
             cursor.execute(
                 """INSERT INTO stock (nombre, cantidad, precio_USD) VALUES (?, ?, ?)""",
@@ -126,7 +144,7 @@ def bucle_principal():
             modificar_producto()
 
         elif opcion == "4":
-            subprocess.run(["cls" if os.name == "nt" else "clear"], check=True)
+            print("\033[H\033[2J", end="")
             print("\n🧹 Pantalla limpiada.\n")
 
         elif opcion == "5":
@@ -135,10 +153,16 @@ def bucle_principal():
         elif opcion == "6":
             mostrar_estadisticas()
 
-
         elif opcion == "7":
+            calculadora_ingreso_NETO()
+
+        elif opcion == "8":
+            calculadora_ingreso_NETO_mensual()
+
+        elif opcion == "9":
             print("\n¡Gracias por usar Stocky! 👋")
             break
+        
 
         else:
             print("❌ Opción no válida. Intente de nuevo.\n")
