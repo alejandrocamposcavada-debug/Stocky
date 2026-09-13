@@ -1,2 +1,3 @@
 # Stocky
-Un gestor de Stock para tiendas.
+Un gestor de almacenamiento para tiendas y calculadora de ingresos.
+Desarollado por Daniel Alejandro Campos Cavada.
