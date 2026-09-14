@@ -1,5 +1,5 @@
                                                        Español
-Si necesita ayuda o soporte contactese conmigo a traves de mi email: alejandrocamposcavada@gmail.com
+Si necesita ayuda o soporte contactese a traves de mi email: alejandrocamposcavada@gmail.com
 
 Para Ejecutar Stocky Necesita tener instalado Python 3.12.3 o superior en su computadora y la extension PyQt6
 
