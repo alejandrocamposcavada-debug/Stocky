@@ -27,8 +27,8 @@ def main():
         print("Instalando dependencias desde requirements.txt...")
         subprocess.run([pip_executable, "install", "-r", "requirements.txt"], check=True)
     else:
-        print("Instalando PyQt6...")
-        subprocess.run([pip_executable, "install", "PyQt6"], check=True)
+        print("Instalando PySide6...")
+        subprocess.run([pip_executable, "install", "PySide6"], check=True)
     print("Dependencias listas.")
 
     # 3. Ejecutar Stocky
