@@ -1,5 +1,7 @@
 Si necesita ayuda o soporte contactese a traves de mi email: alejandrocamposcavada@gmail.com
 
+***IMPORTANTE: LAS VERSIONES 1.7 E INFERIORES DE STOCKY USAN PyQt6 POR LO TANTO ESTAN BAJO LICENCIA GNU GPL v3.0.***
+
 Dependencias: Python 3.12.3, SQLite3 y PySide6 (Se instalan autamaticamente al ejecutar iniciar.py)
 
 La base de datos (stock.db) se genera automaticamente al abrir por primera vez la aplicacion, no la cree usted.
