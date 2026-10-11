@@ -1,0 +1,13 @@
+# Entorno virtual local
+venv
+venv/
+
+# Base de datos local
+stock.db
+
+# Reportes y exportaciones locales
+inventario_stocky.csv
+
+# Archivos de caché de Python
+__pycache__/
+*.pyc
