@@ -1,21 +1,29 @@
-Si necesita ayuda o soporte contactese a traves de mi email: alejandrocamposcavada@gmail.com
+# 📦 Stocky - Gestor de Inventario
 
-***IMPORTANTE: LAS VERSIONES 1.7 E INFERIORES DE STOCKY USAN PyQt6 POR LO TANTO ESTAN BAJO LICENCIA GNU GPL v3.0.***
+📩 **Soporte:** Si necesita ayuda o soporte, contáctese a través del correo: alejandrocamposcavada@gmail.com
 
-Dependencias: Python 3.12.3, SQLite3 y PySide6 (Se instalan autamaticamente al ejecutar iniciar.py)
+---
 
-La base de datos (stock.db) se genera automaticamente al abrir por primera vez la aplicacion, no la cree usted.
+### 📜 Licencia
+* **Versiones 1.7.1 en adelante:** Distribuido bajo la licencia **Creative Commons Atribución-NoComercial 4.0 Internacional (CC BY-NC 4.0)** © Daniel Alejandro Campos Cavada.
+* ⚠️ **Versiones 1.7 e inferiores:** Utilizan PyQt6 y se rigen bajo la licencia **GNU GPL v3.0**.
 
-Nunca borre ningun archivo que este dentro de la carpeta de Stocky.
+---
 
-En caso de haber borrado algun archivo dentro de la carpeta de Stocky contactese conmigo.
+### 🛠️ Requisitos y Dependencias
+* **Python:** 3.12.3 o superior
+* **Librerías:** SQLite3 y PySide6 (se instalan automáticamente al ejecutar `iniciar.py`)
 
- ¿Como ejecutar Stocky.py?
+> 💡 **Nota:** La base de datos (`stock.db`) se genera automáticamente al abrir la aplicación por primera vez. Por favor, no elimine ningún archivo dentro de la carpeta del proyecto.
 
- ***Windows***
- 1. Accede a la Carpeta de Stocky-Main en una terminal
- 2. Ejecute `python iniciar.py`
+---
+
+### 🚀 ¿Cómo ejecutar Stocky?
+
+***Windows***
+1. Acceda a la carpeta de Stocky en una terminal.
+2. Ejecute: `python iniciar.py`
 
 ***Linux***
-1. Accede a la carpeta de Stocky-main en una terminl
-2. Ejecute `python3 iniciar.py`
+1. Acceda a la carpeta de Stocky en una terminal.
+2. Ejecute: `python3 iniciar.py`
