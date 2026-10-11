@@ -1,6 +1,6 @@
 Si necesita ayuda o soporte contactese a traves de mi email: alejandrocamposcavada@gmail.com
 
-Dependencias: Python 3.12.3, SQLite3 y PyQt6 (Se instalan autamaticamente al ejecutar iniciar.py)
+Dependencias: Python 3.12.3, SQLite3 y PySide6 (Se instalan autamaticamente al ejecutar iniciar.py)
 
 La base de datos (stock.db) se genera automaticamente al abrir por primera vez la aplicacion, no la cree usted.
 
