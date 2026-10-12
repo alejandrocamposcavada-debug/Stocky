@@ -388,31 +388,27 @@ class StockyApp(QMainWindow):
 
     QMessageBox.warning(self, "Alerta de Stock Bajo", mensaje)
 
-  def exportar_a_csv(self):
-    self.cursor.execute("SELECT * FROM stock")
-    productos = self.cursor.fetchall()
-
-    if not productos:
-      QMessageBox.warning(
-          self, "Exportar", "⚠️ El inventario está vacío. No hay datos que exportar."
-      )
-      return
-
-    nombre_archivo = "inventario_stocky.csv"
+def exportar_a_csv(self):
     try:
-      with open(nombre_archivo, mode="w", newline="", encoding="utf-8") as archivo:
-        escritor = csv.writer(archivo)
-        escritor.writerow(["ID", "Producto", "Cantidad", "Precio USD"])
-        escritor.writerows(productos)
-      QMessageBox.information(
-          self,
-          "Exportación Exitosa",
-          f"✅ Inventario exportado correctamente en '{nombre_archivo}'.",
-      )
+        self.cursor.execute("SELECT * FROM stock")
+        productos = self.cursor.fetchall()
+
+        if not productos:
+            QMessageBox.warning(self, "Aviso", "El inventario está vacío. No hay datos para exportar.")
+            return
+
+        carpeta_exports = "exports"
+        os.makedirs(carpeta_exports, exist_ok=True)
+        nombre_archivo = os.path.join(carpeta_exports, "inventario_stocky.csv")
+
+        with open(nombre_archivo, mode="w", newline="", encoding="utf-8") as archivo:
+            escritor = csv.writer(archivo)
+            escritor.writerow(["ID", "Producto", "Cantidad", "Precio USD"])
+            escritor.writerows(productos)
+
+        QMessageBox.information(self, "Éxito", f"Inventario exportado correctamente en:\n{nombre_archivo}")
     except Exception as e:
-      QMessageBox.critical(
-          self, "Error", f"❌ No se pudo exportar el archivo:\n{e}"
-      )
+        QMessageBox.critical(self, "Error", f"No se pudo exportar el archivo: {e}")
 
   def limpiar_formulario(self):
     self.input_id.clear()
