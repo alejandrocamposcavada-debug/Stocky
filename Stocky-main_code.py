@@ -5,7 +5,7 @@ import sqlite3
 import subprocess
 import os
 
-version = "1.7"
+version = "1.7.2"
 
 conexion = sqlite3.connect("stock.db")
 cursor = conexion.cursor()
