@@ -14,7 +14,7 @@
 * **Python:** 3.12.3 o superior
 * **Librerías:** SQLite3 y PySide6 (se instalan automáticamente al ejecutar `iniciar.py`)
 
-> 💡 **Nota:** La base de datos (`stock.db`) se genera automáticamente al abrir la aplicación por primera vez. Por favor, no elimine ningún archivo dentro de la carpeta del proyecto.
+> 💡 **Nota:** La base de datos (`stock.db`) se genera automáticamente cuando se abre Stocky. Por favor, no elimine ningún archivo dentro de la carpeta del proyecto.
 
 ---
 
