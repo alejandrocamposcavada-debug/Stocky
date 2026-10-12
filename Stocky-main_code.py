@@ -31,7 +31,7 @@ def exportar_a_csv():
         return
 
     # 1. Definir el nombre de la carpeta
-    Carpeta_exports = "exports"
+    Carpeta_exports = "CSV"
 
     # 2. Crear la carpeta si no existe (create if not exists)
     os.makedirs(carpeta_exports, exist_ok=True)
