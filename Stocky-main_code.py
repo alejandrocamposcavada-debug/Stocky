@@ -25,19 +25,25 @@ cursor.execute(
 def exportar_a_csv():
     cursor.execute("SELECT * FROM stock")
     productos = cursor.fetchall()
-    
+
     if not productos:
         print("\n⚠️ El inventario está vacío. No hay datos para exportar.\n")
         return
 
-    nombre_archivo = "inventario_stocky.csv"
+    # 1. Definir el nombre de la carpeta
+    Carpeta_exports = "exports"
+
+    # 2. Crear la carpeta si no existe (create if not exists)
+    os.makedirs(carpeta_exports, exist_ok=True)
+
+    # 3. Construir la ruta completa del archivo dentro de esa carpeta
+    nombre_archivo = os.path.join(carpeta_exports, "inventario_stocky.csv")
+
     with open(nombre_archivo, mode="w", newline="", encoding="utf-8") as archivo:
         escritor = csv.writer(archivo)
-        # Escribir cabeceras
         escritor.writerow(["ID", "Producto", "Cantidad", "Precio USD"])
-        # Escribir filas de la base de datos
         escritor.writerows(productos)
-        
+
     print(f"\n✅ Inventario exportado con éxito en '{nombre_archivo}'.\n")
 
 def alerta_stock_bajo():
