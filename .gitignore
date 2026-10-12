@@ -1,5 +1,8 @@
+#Carpeta de exportaciones
+
+CSV/
+
 # Entorno virtual local
-venv
 venv/
 
 # Base de datos local
