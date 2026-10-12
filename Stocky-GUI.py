@@ -30,7 +30,7 @@ class StockyApp(QMainWindow):
 
   def __init__(self):
     super().__init__()
-    self.version = "1.7.1"
+    self.version = "1.7.2"
     self.setWindowTitle(f"Stocky v{self.version} - Gestión de Inventario")
     self.resize(900, 650)
 
