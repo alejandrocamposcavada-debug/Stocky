@@ -397,7 +397,7 @@ def exportar_a_csv(self):
             QMessageBox.warning(self, "Aviso", "El inventario está vacío. No hay datos para exportar.")
             return
 
-        carpeta_exports = "exports"
+        carpeta_exports = "CSV"
         os.makedirs(carpeta_exports, exist_ok=True)
         nombre_archivo = os.path.join(carpeta_exports, "inventario_stocky.csv")
 
